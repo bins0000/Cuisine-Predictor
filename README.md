@@ -3,7 +3,7 @@
 #### See COLLABORATORS.txt for related links
 
 
-# Activating pipenv in the project directory
+
 
 
 
@@ -12,6 +12,10 @@
 ## First, installation, simply clone the github ripository to your machine.
 This github repository can be cloned using the following command:-  
     ```git clone "git repository link"```
+    
+    
+## Activating pipenv in the project directory
+
 
 ## Prerequisites
     [packages]
@@ -27,40 +31,18 @@ The rest of the requirements will be import by the program. Also, make sure to c
 
 
 ## Directories
-    cs5293sp22-project1
-    ├── COLLABORATORS.txt
-    ├── LICENSE.txt
-    ├── Pipfile
-    ├── Pipfile.lock
-    ├── README.md
-    ├── docs
-    │   ├── common_names.txt
-    │   └── emails
-    │       ├── 1.txt
-    │       ├── 2.txt
-    │       ├── 3.txt
-    │       └── test.txt
-    ├── project1
-    │   ├── common_names.txt
-    │   └── main.py
-    ├── redactor.py
-    ├── setup.cfg
-    ├── setup.py
-    └── tests
-        ├── glob_test.py
-        ├── project1
-        │   └── common_names.txt
-        ├── spacy_test.py
-        ├── test_address.py
-        ├── test_concepts.py
-        ├── test_dates.py
-        ├── test_email.py
-        ├── test_genders.py
-        ├── test_names.py
-        └── test_phones.py
-
-
-
+    cs5293sp22-project2
+        ├── COLLABORATORS
+        ├── LICENSE
+        ├── Pipfile
+        ├── Pipfile.lock
+        ├── README.md
+        ├── docs
+        │   └── yummly.json
+        ├── project2.py
+        ├── setup.cfg
+        ├── setup.py
+        └── tests
 
 ## How to run
 In the repository outer most directory (cs5293sp22-project1/ where redactor.py is located), you can call `redactor.py` to run the program by using the following command:- 
