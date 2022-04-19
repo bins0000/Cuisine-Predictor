@@ -59,21 +59,8 @@ The rest of the requirements will be import by the program. Also, make sure to c
         ├── test_names.py
         └── test_phones.py
 
-The main files in this repository are `redactor.py` and `main.py`. `redactor.py` will drive the program, so this is the one to call. 
 
-## To get the email dataset
-In tmp directory, run the following command:- 
-	wget https://www.cs.cmu.edu/~enron/enron_mail_20150507.tar.gz
-	tar xvzf enron_mail_20150507.tar.gz
-The dataset was very large to inspect, so some samples are picked and put in cs5293sp22-project1/docs/emails folder as can be seen in the directory above.
-### This program reads file from /cs5293sp22-project1/docs/emails directory.
-#### please put any file you want the program to redact in that directory.
 
-## Email dataset are not in .txt format
-Since the downloaded dataset are not .txt files, I assumed that we should change the file type before running the program because 
-running the program with the specified command line argument (in project description) should read all files given by the glob — 
-in this case all the files ending in .txt in the current folder. So, the .txt files must already be present before running the program. 
-But either way, the --input flag is going to specify which input type need to be read, and the program can handle it. 
 
 ## How to run
 In the repository outer most directory (cs5293sp22-project1/ where redactor.py is located), you can call `redactor.py` to run the program by using the following command:- 
@@ -86,36 +73,19 @@ In the repository outer most directory (cs5293sp22-project1/ where redactor.py i
 Among the arguments, --input and --concept can take more than one arguments. For example, you might pass in --concept food --concept school for concept. 
 
 # The functions
-As mentioned, apart from redactor.py, main.py is another important file as this file host all the functions neccessary to this program. 
 
-## Names Redactor
-`nameRedactor(data)` takes in a string of data (in this case, the string email) and redacts the names that appear in the data. This function employs SpaCy to tokenize the string into tokens and label them according there most suitable type. The entity type for names is 'PERSON'. So, in this function, any words that are categorized as 'PERSON' will be redacted. The redacted words will become █████████ (blocks) instead <-- This goes for every redaction through out the program. 
-However, SpaCy alone cannot catch every name in the documents, and therefore some names are not redacted. I then use name-dataset published by [philipperemy](https://github.com/philipperemy/name-dataset) to generate more names to catch somemore names to be redacted. Thanks to philipperemy! I generated 1000 most common names in the US and put it in a file called `common_names.txt` to be passed on to this function.
+## predict_cuisine(input_ingredients, ingredient_train, ingredient_test, cuisine_train, cuisine_test)
 
-## Email Prefix Redactor
-`emailprefRedactor(data)` this function takes in the same string to redacts email prefix. This function will be called along with `nameRedactor(data)` when the flag for --names is passed. I considered redacting email prefix as well because most of the times, the prefix of the email contains names of the email owner. This function uses a regular expression below to redact the email prefixes.
-    
-    `'[a-zA-Z0-9_\-\.]*@'`
-    
-## Concepts Redactor
-`conceptRedactor(data)` takes data of string in and redact any senctence that contains the exact words or other words related to the exact words passed in by --concept arguments. Since user can basically passed in any words they can think of, the function will normallize the input word by lemmatization to narrow down the word search. NLTK package is used in this function to lemmatize the words and also fine the synnonym of the input concepts to increase the amount of vocab related to the input concept. 
-The collection of concepts are store in a 2D list format where the related words in a list are group together by concept. If a sentence in the document contain any word in the list, the whole sentence will be redacted with the blocks. 
 
-## Addresses Redactor
-`addressRedactor(data)` just like others, take in data string and redact the street address that appears in the text. This function uses multiple regular expression to try to catch as many formats of addresses including the street addresses, P.O. boxes, City, State, and Zip code. 
-My regular expressions in this function are heavily inspired by the published CommonRegex module by [madisonmay](https://github.com/madisonmay/CommonRegex). Big thanks to this person as well! 
+## closest_cuisines(N, train_df, train_features, input_ingredients, cuisine_pred)
 
-## Gender Specific Terms Redactor
-`genderRedactor(data)` This function here redacts any terms that specify gender such as she, he, mother. In this function, I switch to use a list of words that are gender specific. Alongside SpaCy as a tokenizer, the tokenized words are then lemmatized are search to see if it exist in the list or not. If the word happens to be in the list of gender specific terms, then that word is redacted. 
-
-## Phone Numbers Redactor
-`phoneRedactor(data)` This function uses multitude of regular expression to redact various forms of phone numbers. Many regular expressions in this function are also inspired by madisonmay as well. If the text has any combination of numbers similar to the regular expression, then it will be redacted with the blocks. 
-
-## Dates Redactor
-`dateRedactor(data)` This function redacts dates in various forms using regular expressions as well. It can detect dates in the form such as 12 Aug 2020 or 11/12/1990. The dates redactor also redacts dates including days like Monday-Sunday and the words today, yesterday, and tomorrow. 
 
 ## Main Function
-`main()` takes the arguments mentions earlier and calls the function coresponding to the what are being passed. It also keep tracks of the redaction and provide some statistics at the end of the redaction for each file.
+
+
+### Getting yummly.json
+
+### Split dataset to train and test data
 
 # Assumptions & Bugs
 ## Assumptions
