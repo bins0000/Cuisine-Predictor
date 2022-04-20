@@ -109,12 +109,13 @@ The predict and similarity functions above were called in the main function and 
     ├── test_genders.py
     ├── test_names.py
     └── test_phones.py
-As can be seen from the trees above, several test was done to check if a particular component is working. 
+As can be seen from the trees above, several test was done to check if a particular component is working. The docs folder was created to store the yummly.json for the test. So, please make sure that there is a `docs` folder in `tests` folder to ensure that the program has a dataset to read from. 
   
-### glob_test.py
-This test was done to check if glob can actually locate the file with the given extention. In this case, I simply want glob to look for common.names.txt in projext1 folder. 
+### test_predictor.py
+This test was done to check if the model predict a 'cuisine' from the input ingredients. The test checks for the `predict_cuisine()` function to return a list with 1 value which is the predicted cuisine. Therefore, testing if that returned list has 1 element was done to ensure that the classifier predicted one cuisine out. 
 
-
+### test_closest_cuisine.py
+This one tests for `closest_cuisines()` function where the returned element is a list of N elements. These elements are the dictionary of closest cuisines' ID and similarity score. For this function, the number of closest cuisines returned should be N amount. Thus, the test to check if the returned list has N elements was done. 
 
 # Outputs
 The outputs are written into a specified folder on the same level as project1/
