@@ -69,16 +69,19 @@ Then on the ingredient list that was input, the cuisine was predicted using SVM 
 
 # Assumptions & Bugs
 ## Assumptions
-#### Times are not redacted.
-- I assumed that time is not the sensitive information worth redacting. It can also provide a little bit of context. 
+#### Train and Test split 
+- Train and Test data were split into 70% and 30% respectively, with the assumption that 70% of data is enough to predict with high accuracy.
 
-
+#### Testing with the holdout testing set is enough
+- with this assumption, I did not need to evaluate the model with cross validation. 
 
 ## Bugs
-#### Not all the names are redacted
-- NLTK and SpaCy are not being so accurates with names. Also, names are not detected if they are enclosed within other special characters. e.g. "Name LastName". 
-- Some short names are not being detected and some common names are being mislabeled into GPE or ORG. 
 
+#### Random Forest
+- when the number of trees in the forest is higher than 10, the virtual machine cannot handle the modeling.
+- 
+#### Data size in finding similarities with cosine similarity
+- The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
 
 # Test
 ### 
