@@ -95,6 +95,7 @@ The predict and similarity functions above were called in the main function and 
 ## Bugs
 #### Random Forest
 - When the number of trees in the forest is higher than 10, the virtual machine cannot handle the modeling.
+- So, I chose to use SVM as a classifier instead, because it actually runs faster with high iterations and it has higher accuracy.
 #### Data size in finding similarities with cosine similarity
 - The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
 
