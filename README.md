@@ -13,16 +13,21 @@ This github repository can be cloned using the following command:-
 
 
 ## Prerequisites
-    [packages]
-    spacy = "*"
-    nltk = "*"
-    pytest = "*"
+        [[source]]
+        url = "https://pypi.org/simple"
+        verify_ssl = true
+        name = "pypi"
 
-    [requires]
-    python_version = "3.10"
-You should be able to install above packages using pipenv install 'package'
-  e.g. pipenv install pandas
-The rest of the requirements will be import by the program. Also, make sure to create and use the environment with python 3.10
+        [packages]
+        pandas = "*"
+        numpy = "*"
+        sklearn = "*"
+        pytest = "*"
+
+        [dev-packages]
+
+        [requires]
+        python_version = "3.10"
 
 
 ## Directories
