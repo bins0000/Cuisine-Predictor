@@ -8,12 +8,14 @@
 
 ## First, installation, simply clone the github ripository to your machine.
 This github repository can be cloned using the following command:-  
-    ```git clone "git repository link"```
-    
+    ```git clone <git repository link>``` the link in this case is https://github.com/bins0000/cs5293sp22-project2
     
 ## Activating pipenv in the project directory
-
-
+inside the project directory `cs5293sp22-project2` run the following command to create a pip environment
+```
+pipenv install .
+```
+while creating a pip environment, the dependencies should autumatically be installed. 
 ## Prerequisites
         [[source]]
         url = "https://pypi.org/simple"
@@ -30,7 +32,7 @@ This github repository can be cloned using the following command:-
 
         [requires]
         python_version = "3.10"
-
+If the packages above were not installed when the environment was created, you may manualy install each package in the pre-requisites above using `pipenv install <package>`
 
 ## Directories
     cs5293sp22-project2
@@ -86,15 +88,12 @@ The predict and similarity functions above were called in the main function and 
 ## Assumptions
 #### Train and Test split 
 - Train and Test data were split into 70% and 30% respectively, with the assumption that 70% of data is enough to predict with high accuracy.
-
 #### Testing with the holdout testing set is enough
 - with this assumption, I did not need to evaluate the model with cross validation. 
 
 ## Bugs
-
 #### Random Forest
 - when the number of trees in the forest is higher than 10, the virtual machine cannot handle the modeling.
-- 
 #### Data size in finding similarities with cosine similarity
 - The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
 
