@@ -1,7 +1,9 @@
 GeeksForGeeks, https://www.geeksforgeeks.org/read-json-file-using-python/, how to read JSON file
-https://oudatalab.com/cs5293sp22/projects/yummly.json, the dataset yummly.json
-https://www.youtube.com/watch?v=2lA123YPkPg , classifier modeling
-https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html , for random forest
-https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html , for SVM model
-https://github.com/sudhigopal/TextAnalyticsTutorials/blob/master/TextSimilarity.ipynb , for cosine similarity
-https://www.geeksforgeeks.org/json-dumps-in-python/, how to make a dictionary into json format
+OU Data Lab, https://oudatalab.com/cs5293sp22/projects/yummly.json, the dataset yummly.json
+Adi and Sudhi, https://www.youtube.com/watch?v=2lA123YPkPg , classifier modeling
+Scikit-Learn, https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html , for random forest
+Scikit-Learn, https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html , for SVM model
+Adi and Sudhi, https://github.com/sudhigopal/TextAnalyticsTutorials/blob/master/TextSimilarity.ipynb , for cosine similarity
+GeeksForGeeks, https://www.geeksforgeeks.org/json-dumps-in-python/, how to make a dictionary into json format
+Biruk Worku, biruk.kassahun.worku-1@ou.edu, Help me understand input parsing, testing, and json formatting
+Onintsoa R., ony@ou.edu, understanding the structures 
