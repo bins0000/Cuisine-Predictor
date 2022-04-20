@@ -91,6 +91,10 @@ The predict and similarity functions above were called in the main function and 
 - With this assumption, I did not need to evaluate the model with cross validation. 
 #### SVM is the one
 - Other models were also tried, but SVM are the one with the highest accuracy score so far. So, I assumed that SVM might be the best model to use in this case. In reality, there might be a better model to be used as a classifier. 
+#### Similarity Score
+- computing similarities between the cuisines and the input ingredients using cosine similarity might not be the best. But in this case, I assumed that cosine similarity can be used to effectively find the similarities between the ingredients of each cuisine
+#### Number of words in the ingredients
+- I assumed that the ingredients could be one word or a combination of words up to three words in total. Therefore, my vectorizer only include unigram, bigram, and trigram to account for ingredients with one, two, and three words respectively.  
 
 ## Bugs
 #### Random Forest
@@ -98,6 +102,8 @@ The predict and similarity functions above were called in the main function and 
 - So, I chose to use SVM as a classifier instead, because it actually runs faster with high iterations and it has higher accuracy.
 #### Data size in finding similarities with cosine similarity
 - The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
+#### Closest Cuisines
+- When inspecting the IDs of the closest cuisines, sometimes the first closest cuisine is not the same type of cuisine predicted using the classifier. This is because the closest cuisines are found by cosine similarity which is independent from the classifier. 
 
 # Test
 ``` 
