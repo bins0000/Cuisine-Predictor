@@ -38,23 +38,24 @@ The rest of the requirements will be import by the program. Also, make sure to c
         ├── setup.cfg
         ├── setup.py
         └── tests
-
+The program to run is ```project2.py``` in the main directory cs5293sp22-project2
 ## How to run
-In the repository outer most directory (cs5293sp22-project1/ where redactor.py is located), you can call `redactor.py` to run the program by using the following command:- 
+You can call `project2.py` in the commandline to run the program by using the following command as an example:- 
 
-    pipenv run python redactor.py --input '*.txt' \
-                        --names --dates --phones --genders --address\
-                        --concept 'kids' \
-                        --output 'files/' \
-                        --stats stderr
-Among the arguments, --input and --concept can take more than one arguments. For example, you might pass in --concept food --concept school for concept. 
+    pipenv run python project2.py --N 5 --ingredient paprika --ingredient banana  --ingredient "rice krispies" 
 
-# The functions
+Among the arguments, --N takes in an integer that indicates the amount of the closest cuisine ID to be showed, and --ingredient can take multiple items which are the ingredients that the user would want to input for the prediction. 
+
+# Functions in this program
 
 ## predict_cuisine(input_ingredients, ingredient_train, ingredient_test, cuisine_train, cuisine_test)
 this function takes the following parameters: input_ingredients, ingredient_train, ingredient_test, cuisine_train, and cuisine_test. The names of the parameters are straight forward.
 
 Then the function models the clasifier model using scikit-learn package. In this case, SVM model was used as it produces higher confidence score. 
+
+Once the SVM classifier is modelled, the test data was used to find the prediction accuracy to be used as our confidence score for the prediciton.
+
+Then on the ingredient list that was input, the cuisine was predicted using SVM classifier. Then the items being returned from this function are the predicted cuisine, the confidence score, and a dictionary of the new cuisine that was generated from the input ingredients. This dictionary of input ingredients is then used for comparing with other cuisines for similarity. 
 
 ## closest_cuisines(N, train_df, train_features, input_ingredients, cuisine_pred)
 
