@@ -83,17 +83,18 @@ Then, the dataset was split using scikit-learn's `train_test_split()` function. 
 
 The predict and similarity functions above were called in the main function and the results were then put together in a dictionary and converted into a json object. 
 
-
 # Assumptions & Bugs
 ## Assumptions
 #### Train and Test split 
 - Train and Test data were split into 70% and 30% respectively, with the assumption that 70% of data is enough to predict with high accuracy.
 #### Testing with the holdout testing set is enough
-- with this assumption, I did not need to evaluate the model with cross validation. 
+- With this assumption, I did not need to evaluate the model with cross validation. 
+#### SVM is the one
+- Other models were also tried, but SVM are the one with the highest accuracy score so far. So, I assumed that SVM might be the best model to use in this case. In reality, there might be a better model to be used as a classifier. 
 
 ## Bugs
 #### Random Forest
-- when the number of trees in the forest is higher than 10, the virtual machine cannot handle the modeling.
+- When the number of trees in the forest is higher than 10, the virtual machine cannot handle the modeling.
 #### Data size in finding similarities with cosine similarity
 - The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
 
