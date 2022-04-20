@@ -139,4 +139,5 @@ if __name__ == "__main__":
     # transfer input variables
     N = int(args.N)
     input_ingredients = args.ingredient
+    # call main function to run the program
     main(N, input_ingredients)
