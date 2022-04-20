@@ -2,6 +2,8 @@
 # Author Nasri Binsaleh
 #### See COLLABORATORS.txt for related links
 
+## Heads up! The program can take some time to run, please don't give up on waiting! 
+
 # How to install, directions on how to use the code, and some example of how to run.
 
 ## First, installation, simply clone the github ripository to your machine.
@@ -97,19 +99,14 @@ The predict and similarity functions above were called in the main function and 
 - The data size for finding similarity is limited to about 5,000 elements. More than that would cause the virtual machine to die.  
 
 # Test
-### 
-    ├── glob_test.py
-    ├── project1
-    │   └── common_names.txt
-    ├── spacy_test.py
-    ├── test_address.py
-    ├── test_concepts.py
-    ├── test_dates.py
-    ├── test_email.py
-    ├── test_genders.py
-    ├── test_names.py
-    └── test_phones.py
-As can be seen from the trees above, several test was done to check if a particular component is working. The docs folder was created to store the yummly.json for the test. So, please make sure that there is a `docs` folder in `tests` folder to ensure that the program has a dataset to read from. 
+``` 
+└── tests
+    ├── docs
+    │   └── yummly.json
+    ├── test_closest_cuisine.py
+    └── test_predictor.py
+```
+As can be seen from the trees above, a couple of tests were done to check if a particular component is working. The docs folder was created to store the yummly.json for the test. So, please make sure that there is a `docs` folder in `tests` folder to ensure that the program has a dataset to read from. 
   
 ### test_predictor.py
 This test was done to check if the model predict a 'cuisine' from the input ingredients. The test checks for the `predict_cuisine()` function to return a list with 1 value which is the predicted cuisine. Therefore, testing if that returned list has 1 element was done to ensure that the classifier predicted one cuisine out. 
@@ -118,6 +115,32 @@ This test was done to check if the model predict a 'cuisine' from the input ingr
 This one tests for `closest_cuisines()` function where the returned element is a list of N elements. These elements are the dictionary of closest cuisines' ID and similarity score. For this function, the number of closest cuisines returned should be N amount. Thus, the test to check if the returned list has N elements was done. 
 
 # Outputs
-The outputs are written into a specified folder on the same level as project1/
-The output file will have the same name as the input with .redacted appended as an extention.
-`"./"+output_path + fileName + ".redacted"`
+The output of this program shows you the predicted cuisine and the top N closest cuisines in a json format. An example output can be seen below. 
+```
+{
+    "cuisine": "vietnamese",
+    "score": 0.76,
+    "closest": [
+        {
+            "id": "39186",
+            "score": 0.33
+        },
+        {
+            "id": "23618",
+            "score": 0.28
+        },
+        {
+            "id": "1069",
+            "score": 0.24
+        },
+        {
+            "id": "7833",
+            "score": 0.24
+        },
+        {
+            "id": "41116",
+            "score": 0.24
+        }
+    ]
+}
+```
