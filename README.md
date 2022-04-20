@@ -1,5 +1,5 @@
 # cs5293sp22-project2
-# Author Nasri Binsaleh
+## Author Nasri Binsaleh
 #### See COLLABORATORS.txt for related links
 
 ## Heads up! The program can take some time to run, please don't give up on waiting! 
@@ -114,7 +114,7 @@ This test was done to check if the model predict a 'cuisine' from the input ingr
 This one tests for `closest_cuisines()` function where the returned element is a list of N elements. These elements are the dictionary of closest cuisines' ID and similarity score. For this function, the number of closest cuisines returned should be N amount. Thus, the test to check if the returned list has N elements was done. 
 
 # Outputs
-The output of this program shows you the predicted cuisine and the top N closest cuisines in a json format. An example output can be seen below. 
+The output of this program shows you the predicted cuisine, the score, and the top N closest cuisines with the coresponding similarity score in a json format. An example output can be seen below. 
 ```
 {
     "cuisine": "vietnamese",
@@ -143,3 +143,4 @@ The output of this program shows you the predicted cuisine and the top N closest
     ]
 }
 ```
+Basically, the output shows the json dictionary with three keys including "cuisine", "score", "closest" which their values are the predicted cuisine, the confidence score, and the top N closest cuisines with the coresponding similarity score respectively. 
