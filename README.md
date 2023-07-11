@@ -2,7 +2,7 @@
 
 Original repo name: cs5293sp22-project2
 
-#### This is a Cuisine Predictor pyhton program using SVM classification model to predict the type of cuisine when given a list of ingredients. 
+#### This is a Cuisine Predictor Python program using SVM classification model to predict the type of cuisine when given a list of ingredients. 
 
 ### Heads up! The program can take some time to run, please don't give up on waiting! 
 
