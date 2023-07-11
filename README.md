@@ -1,8 +1,11 @@
-# cs5293sp22-project2
-## Author Nasri Binsaleh
-#### See COLLABORATORS.txt for related links
+# Author: Nasri Binsaleh
 
-## Heads up! The program can take some time to run, please don't give up on waiting! 
+Original repo name: cs5293sp22-project2
+
+#### This is a Cuisine Predictor pyhton program using SVM classification model to predict the type of cuisine when given a list of ingredients. 
+
+### Heads up! The program can take some time to run, please don't give up on waiting! 
+
 
 # How to install, directions on how to use the code, and some example of how to run.
 
